@@ -1,0 +1,34 @@
+## mako
+<%page expression_filter="h"/>
+<%! from django.utils.translation import ugettext as _ %>
+<%namespace name='static' file='../static_content.html'/>
+<%inherit file="../main.html" />
+
+<%block name="pagetitle">${_("About Us")}</%block>
+
+<div class="page-heading">
+    <h1>${_("About Us")}</h1>
+</div>
+<section class="static-content">
+    <div class="grid-manual grid-container">
+        <div class="inner-container">
+            <div class="row">
+                <div class="col col-12 sm-col-8">
+                                      <h1>Welcome to Iwiz</h1>
+                                        <!--<h2>Our Story</h2>-->
+                    <p>Iwiz is an independent platform offering online courses to
+                    anyone, anywhere, anytime. Iwiz is where lifelong learners come to learn the skills they need, to land the jobs they want, to build the lives they deserve.
+                </p>
+
+                </div>
+                <!--<div class="col col-12 sm-col-4 mission-statement">
+                    <img src="${static.url('images/about-page-image.jpg')}" alt="Mission Statement">
+                    <h2>Our Difference</h2>
+                    <p>"Open access to education is important. Our education centre has an idea to raise awareness about the educational
+                        opportunity."</p>
+
+                </div>-->
+            </div>
+        </div>
+    </div>
+</section>

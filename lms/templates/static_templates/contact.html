@@ -1,0 +1,105 @@
+## mako
+<%page expression_filter="h"/>
+<%!
+from django.utils.translation import ugettext as _
+from openedx.core.djangolib.markup import Text, HTML
+from datetime import datetime
+import pytz
+from django.conf import settings
+%>
+<%inherit file="../main.html" />
+<%namespace name='static' file='../static_content.html'/>
+<%block name="pagetitle">${_("Contact Us")}</%block>
+
+<div class="page-heading">
+  <h1>${_("Contact Us")}</h1>
+</div>
+
+<section class="static-content">
+  <div class="grid-manual grid-container">
+    <div class="inner-container">
+      <div class="row">
+        <div class="col col-12 sm-col-12 md-col-12 lg-col-12 xl-col-12 col-centered">
+          <form id="contact-form" method="post" action="" role="form">
+
+      <div class="messages"></div>
+
+      <div class="controls">
+
+          <div class="row">
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <label for="form_name">Firstname *</label>
+                      <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
+                      <div class="help-block with-errors"></div>
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <label for="form_lastname">Lastname *</label>
+                      <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
+                      <div class="help-block with-errors"></div>
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <label for="form_email">Email *</label>
+                      <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
+                      <div class="help-block with-errors"></div>
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <label for="form_phone">Phone</label>
+                      <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Please enter your phone">
+                      <div class="help-block with-errors"></div>
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-md-12">
+                  <div class="form-group">
+                      <label for="form_message">Message *</label>
+                      <textarea id="form_message" name="message" class="form-control" placeholder="Message for me *" rows="4" required="required" data-error="Please,leave us a message."></textarea>
+                      <div class="help-block with-errors"></div>
+                  </div>
+              </div>
+              <div class="col-md-12">
+                  <a type="submit" class="btn-brand text-white" value="Send message" style="cursor: pointer">Send Messege</a>
+              </div>
+          </div>
+      </div>
+
+  </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<a href="#success-message" class="media hidden" id="success-message-btn" rel="leanModal">
+</a>
+<div id="success-message" class="modal">
+
+    <div class="alert alert-success" role="alert" aria-labelledby="alert-title-success" tabindex="-1">
+        <span class="icon alert-icon icon-check" aria-hidden="true">
+          <i class="fa fa-check" aria-hidden="true"></i>
+        </span>
+
+        <div class="alert-message">
+          <h3 class="alert-title" id="alert-title-success">
+              ${_("Thank you for your inquiry")}
+          </h3>
+          <p class="alert-copy-with-title">
+              We'll get back to you within 24 hours.
+          </p>
+        </div>
+    </div>
+</div>
+
+
+<%block name="js_extra">
+  <script src="${static.url('js/contact-form.js')}"></script>
+</%block>

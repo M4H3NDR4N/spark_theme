@@ -1,0 +1,104 @@
+## mako
+<%page expression_filter="h"/>
+<%inherit file="main.html" />
+<%namespace name='static' file='static_content.html'/>
+<%namespace file='main.html' import="login_query"/>
+<%!
+    from django.utils.translation import ugettext as _
+    from django.core.urlresolvers import reverse
+%>
+
+<%block name="headextra">
+    <link rel="stylesheet" type="text/css" href="${static.url('css/slick.css')}"/>
+    <link rel="stylesheet" type="text/css" href="${static.url('css/owl.carousel.min.css')}"/>
+    <link rel="stylesheet" type="text/css" href="${static.url('css/bootstrap/lms-main-bootstrap.css')}"/>
+</%block>
+
+<%block name="js_extra">
+    <script type="text/javascript">
+        $(window).load(function () {
+            $(".more-about-btn").removeClass("hidden");
+            if (getParameterByName('next')) {
+                $('#login').trigger("click");
+            }
+        })
+    </script>
+    ##     <%include file="about_site.html" />
+    ##     <%include file="advisory_site.html" />
+##<%include file="partners_site.html" />
+
+    <script type="text/javascript" src="${static.url('js/slick.min.js')}"></script>
+    <script type="text/javascript" src="${static.url('js/owl.carousel.min.js')}"></script>
+
+</%block>
+
+<section class="home">
+    <header class="hero-main hero">
+        <div class="tint-dark">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="banner col col-12 sm-col-12 md-col-12 lg-col-12 xl-col-12 text-tint">
+                        <!--<div class="banner-text1">
+
+                            <h1>Data Science Launchpad</h1>
+
+                        </div>-->
+                        <div class="banner-text2">
+
+                            <h1 style="text-align:left; font-size:3.5vw; font-weight:bold; opacity:0.9">Build the future ... today!</h1>
+
+                        </div>
+                        % if show_homepage_promo_video:
+                            <a href="#video-modal" class="btn-neutral btn-large" rel="leanModal">Watch video <i
+                                    class="fa fa-play"></i></a>
+                        % endif
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="fcourse-list">
+            <%include file="${courses_list}" />
+    </div>
+    ##     <section class="about-section">
+    ##         <div class="about-container"></div>
+    ##     </section>
+    ##     <section class="advisory-section">
+    ##         <div class="advisory-container"></div>
+    ##     </section>
+
+    <!--<section class="bottom-banner-section">
+        <div class="grid-manual bottom-banner-container">
+            <div class="bottom-banner-text">
+                <div class="bottom-learn">
+                    <h2>READY TO LEARN?</h2>
+                </div>
+                <div class="bottom-register">
+                    <a class="btn btn-info text-primary" href="/register${login_query()}">${_("REGISTER NOW")}</a>
+                </div>
+            </div>
+        </div>
+    </section>-->
+</section>
+
+% if show_homepage_promo_video:
+    <section id="video-modal" class="modal modal-custom custom-video-modal">
+        <div class="inner-wrapper">
+            <iframe title="YouTube Video" width="640" height="360"
+                    src="//www.youtube.com/embed/${homepage_promo_video_youtube_id}?showinfo=0" frameborder="0"
+                    allowfullscreen></iframe>
+        </div>
+    </section>
+% endif
+
+% if show_signup_immediately is not UNDEFINED:
+## NOTE: This won't work in production, because anonymous views are cached, so it will
+## show either with or without this extra js for 3 minutes at a time.
+
+    <script type="text/javascript">
+        $(window).load(function () {
+            $('#signup_action').trigger("click");
+        });
+    </script>
+% endif

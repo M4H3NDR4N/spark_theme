@@ -1,0 +1,58 @@
+## mako
+<%page expression_filter="h"/>
+<%namespace name='static' file='static_content.html'/>
+
+<script type="text/template" id="about-content">
+    <div class="grid-manual">
+        <div class="row">
+            <div class="col col-12 text-center">
+                <p>So how do you start taking courses?</p>
+            </div>
+            <div class="col col-12 text-center">
+                <h2>It's simple! Just follow the 3 steps below.</h2>
+            </div>
+        </div>
+
+        <div class="row about-list text-center">
+            <div class="col col-4 about-list-item">
+                <div class="about-icon">
+                    <img src="${static.url('images/register.jpg')}" alt="Register"/>
+                    <p>
+                        <span>1. Register for Free</span>
+                        You can do this by clicking 'register' at the top of the page. Once you have registered, we will
+                        send you an e-mail with a link to verify your account. You MUST click that link to confirm your
+                        registration.
+                    </p>
+                </div>
+            </div>
+            <div class="col col-4 about-list-item">
+                <div class="about-icon">
+                    <img src="${static.url('images/enroll.jpg')}" alt="Enroll"/>
+                    <p>
+                        <span>2. Enroll in Courses</span>
+                        You may enroll in as many courses as you like. Search our course library until you’ve found the
+                        course that interests you most.
+                    </p>
+                </div>
+            </div>
+            <div class="col col-4 about-list-item">
+                <div class="about-icon">
+                    <img src="${static.url('images/learn.jpg')}" alt="Start"/>
+                    <p>
+                        <span>3. Start Learning!</span>
+                        Courses are made up of many modules, and inside each module you can find learning materials such
+                        as readings, videos, photos and tests such as 'multiple choice' or 'drag and drop'.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row hidden more-about-btn">
+            <div class="col col-12 text-center">
+                <a href="/about" class="btn-neutral">More about this site</a>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script src="${static.url('js/about-site.js')}"></script>
