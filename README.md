@@ -4,13 +4,17 @@ OpenEdx Ginkgo Theme
                                    		 OPENEDX CONFIGURATION
 
 The Native OpenEdx 2.2  Installation guide is given below:
+
 1)Download OpenEdx ginkgo.2.2 installation file from  https://bitnami.com/stack/edx.
 
 2)Use the command in terminal:
               chmod 755 bitnami-edx-ginkgo.2-2-linux-x64-installer.run
               ./bitnami-edx-ginkgo.2-2-linux-x64-installer.run
+	      
       3)   Start manager-linux-x64.run to run your server.
+      
       4)   Follow instructions: http://edx.readthedocs.io/projects/edx-installing-configuring-and-running/en/latest/configuration/index.html
+      
       5)   To enable read+write permission for the theme as edxapp user, follow the commands:
              sudo chown -R iwiz:iwiz my-theme
 	sudo chmod -R u+rw my-theme
@@ -80,6 +84,9 @@ you just have to follow this steps to edit existing registration form.
 
 6. Restart LMS
 
+
+
+The Website Link:  http://iwized.com/
 
 
 
