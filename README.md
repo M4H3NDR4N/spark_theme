@@ -1,11 +1,12 @@
 # spark_theme
 OpenEdx Ginkgo Theme
 
-                                    OPENEDX CONFIGURATION
+                                   		 OPENEDX CONFIGURATION
 
 The Native OpenEdx 2.2  Installation guide is given below:
-Download OpenEdx ginkgo.2.2 installation file from  https://bitnami.com/stack/edx.
-Use the command in terminal:
+1)Download OpenEdx ginkgo.2.2 installation file from  https://bitnami.com/stack/edx.
+
+2)Use the command in terminal:
               chmod 755 bitnami-edx-ginkgo.2-2-linux-x64-installer.run
               ./bitnami-edx-ginkgo.2-2-linux-x64-installer.run
       3)   Start manager-linux-x64.run to run your server.
