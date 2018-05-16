@@ -1,6 +1,9 @@
 # spark_theme
 OpenEdx Ginkgo Theme
 
+The Website Link:  http://iwized.com/
+
+
                                    		 OPENEDX CONFIGURATION
 
 The Native OpenEdx 2.2  Installation guide is given below:
@@ -86,7 +89,6 @@ you just have to follow this steps to edit existing registration form.
 
 
 
-The Website Link:  http://iwized.com/
 
 
 
