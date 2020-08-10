@@ -1,4 +1,3 @@
-#OpenEdx Ginkgo Theme
 
                                    		 OPENEDX CONFIGURATION
 
