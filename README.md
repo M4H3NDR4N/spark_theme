@@ -1,4 +1,4 @@
-# spark_theme                				###OpenEdx Ginkgo Theme
+# spark_theme                				OpenEdx Ginkgo Theme
 
                                    		 OPENEDX CONFIGURATION
 
