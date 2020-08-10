@@ -1,8 +1,4 @@
-# spark_theme
-OpenEdx Ginkgo Theme
-
-The Website Link:  http://iwized.com/
-
+# spark_theme                				###OpenEdx Ginkgo Theme
 
                                    		 OPENEDX CONFIGURATION
 
